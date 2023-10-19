@@ -23,60 +23,7 @@
                                     aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                             </div>
                             {{-- Step 1 --}}
-                            <div class="tab">
-                                <div class="row">
-                                    <div class="col-12">
-                                        <div class="form-group">
-                                            <label for="name"><b>Nama</b></label>
-                                            <input type="text" name="name" class="form-control" id="name"
-                                                required onkeyup="removeInvalidFeedback(this)">
-                                            <div class="invalid-feedback text-capitalize">
-                                                Nama harus diisi
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-12">
-                                        <div class="form-group">
-                                            <label for="instance"><b>Instansi</b></label>
-                                            <input type="text" name="instance" class="form-control" id="instance"
-                                                required onkeyup="removeInvalidFeedback(this)">
-                                            <div class="invalid-feedback text-capitalize">
-                                                Instansi harus diisi
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-12">
-                                        <div class="form-group">
-                                            <label for="position"><b>Jabatan</b></label>
-                                            <input type="text" name="position" class="form-control" id="position"
-                                                required onkeyup="removeInvalidFeedback(this)">
-                                            <div class="invalid-feedback text-capitalize">
-                                                Jabatan harus diisi
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-12">
-                                        <div class="form-group">
-                                            <label for="email"><b>Email</b></label>
-                                            <input type="email" name="email" class="form-control" id="email"
-                                                required onkeyup="removeInvalidFeedback(this)">
-                                            <div class="invalid-feedback text-capitalize">
-                                                Email harus diisi dan harus email yang valid
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-12">
-                                        <div class="form-group">
-                                            <label for="whatsapp_number"><b>No Whatsapp</b></label>
-                                            <input type="text" name="whatsapp_number" class="form-control"
-                                                id="whatsapp_number" required onkeyup="removeInvalidFeedback(this)">
-                                            <div class="invalid-feedback text-capitalize">
-                                                No Whatsapp harus diisi
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            @include('guest.components.personal-data')
                             {{-- Step 2 --}}
                             <div class="tab" style="display: none;">
                                 <h5>1. Semua calon karyawan mengirimkan berkas lamaran pekerjaan saat
@@ -104,42 +51,38 @@
                                 </div>
                                 <h5>3. Semua karyawan memiliki kontrak kerja</h5>
                                 <div class="form-group">
-                                    <input type="radio" name="question3" value="Ya"
-                                        onclick="hideRadioAlert(this)" required id="question3Ya">
+                                    <input type="radio" name="question3" value="Ya" onclick="hideRadioAlert(this)"
+                                        required id="question3Ya">
                                     <label for="question3Ya">Ya</label> <br>
-                                    <input type="radio" name="question3" value="Tidak"
-                                        onclick="hideRadioAlert(this)" id="question3Tidak"> <label
-                                        for="question3Tidak">Tidak</label>
-                                    <div id="radioAlert" class="alert alert-danger radio-alert"
-                                        style="display: none;">
+                                    <input type="radio" name="question3" value="Tidak" onclick="hideRadioAlert(this)"
+                                        id="question3Tidak"> <label for="question3Tidak">Tidak</label>
+                                    <div id="radioAlert" class="alert alert-danger radio-alert" style="display: none;">
                                         Pilih salah satu opsi.
                                     </div>
                                 </div>
                                 <h5>4. Pembaruan kontrak kerja karyawan setiap periode dan/ jenjang
                                     tertentu</h5>
                                 <div class="form-group">
-                                    <input type="radio" name="question4" value="Ya"
-                                        onclick="hideRadioAlert(this)" required id="question4Ya">
+                                    <input type="radio" name="question4" value="Ya" onclick="hideRadioAlert(this)"
+                                        required id="question4Ya">
                                     <label for="question4Ya">Ya</label> <br>
-                                    <input type="radio" name="question4" value="Tidak"
-                                        onclick="hideRadioAlert(this)" id="question4Tidak">
+                                    <input type="radio" name="question4" value="Tidak" onclick="hideRadioAlert(this)"
+                                        id="question4Tidak">
                                     <label for="question4Tidak">Tidak</label>
-                                    <div id="radioAlert" class="alert alert-danger radio-alert"
-                                        style="display: none;">
+                                    <div id="radioAlert" class="alert alert-danger radio-alert" style="display: none;">
                                         Pilih salah satu opsi.
                                     </div>
                                 </div>
                                 <h5>5. Memiliki buku pegangan karyawan yang merinci peraturan, kebijakan
                                     & SOP perusahaan</h5>
                                 <div class="form-group">
-                                    <input type="radio" name="question5" value="Ya"
-                                        onclick="hideRadioAlert(this)" required id="question5Ya">
+                                    <input type="radio" name="question5" value="Ya" onclick="hideRadioAlert(this)"
+                                        required id="question5Ya">
                                     <label for="question5Ya">Ya</label> <br>
-                                    <input type="radio" name="question5" value="Tidak"
-                                        onclick="hideRadioAlert(this)" id="question5Tidak">
+                                    <input type="radio" name="question5" value="Tidak" onclick="hideRadioAlert(this)"
+                                        id="question5Tidak">
                                     <label for="question5Tidak">Tidak</label>
-                                    <div id="radioAlert" class="alert alert-danger radio-alert"
-                                        style="display: none;">
+                                    <div id="radioAlert" class="alert alert-danger radio-alert" style="display: none;">
                                         Pilih salah satu opsi.
                                     </div>
                                 </div>
@@ -237,121 +180,7 @@
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-
-    <script>
-        let currentTab = 0;
-        showTab(currentTab);
-
-        function showTab(n) {
-            let tabs = document.getElementsByClassName("tab");
-            for (let i = 0; i < tabs.length; i++) {
-                tabs[i].style.display = "none";
-            }
-            tabs[n].style.display = "block";
-            if (n === 0) {
-                document.getElementById("prevBtn").style.display = "none";
-            } else {
-                document.getElementById("prevBtn").style.display = "inline";
-            }
-            if (n === (tabs.length - 1)) {
-                document.getElementById("nextBtn").style.display = "none";
-                document.getElementById("submitBtn").style.display = "inline";
-            } else {
-                document.getElementById("nextBtn").style.display = "inline";
-                document.getElementById("submitBtn").style.display = "none";
-            }
-
-            // Update the progress bar
-            let progressBar = document.querySelector(".progress-bar");
-            let progress = ((n + 1) / tabs.length) * 100;
-            progressBar.style.width = progress + "%";
-            progressBar.setAttribute("aria-valuenow", progress);
-            // progressBar.innerHTML = progress + '%';
-
-            window.scrollTo(0, 0);
-
-        }
-
-        function nextPrev(n) {
-            let tabs = document.getElementsByClassName("tab");
-            tabs[currentTab].style.display = "none";
-            currentTab += n;
-            if (currentTab >= tabs.length) {
-                return false;
-            }
-            showTab(currentTab);
-        }
-
-        function validateForm() {
-            let tabs = document.getElementsByClassName("tab");
-            let inputs = tabs[currentTab].querySelectorAll("input[required]");
-            let isValid = true;
-            // let radioGroups = tabs[currentTab].querySelectorAll("input[type='radio']");
-
-            for (let i = 0; i < inputs.length; i++) {
-                if (!inputs[i].value) {
-                    isValid = false;
-                    inputs[i].classList.add("is-invalid");
-                } else {
-                    inputs[i].classList.remove("is-invalid");
-                }
-            }
-
-            let radioGroup = {};
-
-            for (let i = 0; i < inputs.length; i++) {
-                if (inputs[i].type === "email") {
-                    if (!validateEmail(inputs[i].value)) {
-                        isValid = false;
-                        inputs[i].classList.add("is-invalid");
-                    } else {
-                        inputs[i].classList.remove("is-invalid");
-                    }
-                } else if (inputs[i].type === "radio") {
-                    let inputName = inputs[i].getAttribute("name");
-                    if (!radioGroup[inputName] && !document.querySelector("input[name='" + inputName + "']:checked")) {
-                        isValid = false;
-                        radioGroup[inputName] = true;
-                        let radioAlert = inputs[i].parentNode.querySelector(".alert");
-                        radioAlert.style.display = "block";
-                    }
-                } else {
-                    if (!inputs[i].value) {
-                        isValid = false;
-                        inputs[i].classList.add("is-invalid");
-                    } else {
-                        inputs[i].classList.remove("is-invalid");
-                    }
-                }
-            }
-
-            if (isValid) {
-                nextPrev(1);
-            }
-        }
-
-        function removeInvalidFeedback(element) {
-            element.classList.remove("is-invalid");
-            let radioAlert = element.parentNode.querySelector(".alert");
-            if (radioAlert) {
-                radioAlert.style.display = "none";
-            }
-        }
-
-        function hideRadioAlert(radioElement) {
-            const radioAlert = radioElement.parentNode.querySelector(".radio-alert");
-
-            if (radioElement.checked) {
-                radioAlert.style.display = "none";
-            }
-        }
-
-        function validateEmail(email) {
-            // Gunakan ekspresi reguler untuk memeriksa validitas alamat email
-            const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-            return emailPattern.test(email);
-        }
-    </script>
+    <script src="{{ asset('/script/script.js') }}"></script>
 </body>
 
 </html>

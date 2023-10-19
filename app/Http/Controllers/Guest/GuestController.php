@@ -50,4 +50,9 @@ class GuestController extends Controller
 
         return view('guest.result', $data);
     }
+
+    public function businessCalculation()
+    {
+        return view('guest.business-calculation');
+    }
 }
