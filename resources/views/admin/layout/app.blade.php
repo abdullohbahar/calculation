@@ -80,14 +80,14 @@
                             <a href="{{ route('admin.business.form.response') }}"
                                 class="nav-link {{ $active == 'Business' ? 'active' : '' }}">
                                 <i class="nav-icon fas fa-clipboard-list"></i>
-                                <p>Data Jawaban Form Kalkulasi Bisnis</p>
+                                <p>Kalkulasi Bisnis</p>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a href="{{ route('admin.hr.form.response') }}"
                                 class="nav-link {{ $active == 'HR' ? 'active' : '' }}">
                                 <i class="nav-icon fas fa-clipboard-list"></i>
-                                <p>Data Jawaban Form Kalkulasi HR</p>
+                                <p>Kalkulasi HR</p>
                             </a>
                         </li>
                     </ul>
