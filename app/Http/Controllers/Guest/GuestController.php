@@ -55,4 +55,9 @@ class GuestController extends Controller
     {
         return view('guest.business-calculation');
     }
+
+    public function resultCalculationBusinessForm(Request $request)
+    {
+        dd($request->all());
+    }
 }

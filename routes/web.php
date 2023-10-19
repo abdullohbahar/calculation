@@ -23,3 +23,4 @@ Route::get('/kalukasi-hr', [GuestController::class, 'hrCalculation'])->name('hr.
 Route::post('/hasil-kalkulasi-form-hr', [GuestController::class, 'resultCalculationHrForm'])->name('result.calculation.hr.form');
 
 Route::get('/kalukasi-bisnis', [GuestController::class, 'businessCalculation'])->name('business.calulation');
+Route::post('/hasil-kalkulasi-form-bisnis', [GuestController::class, 'resultCalculationBusinessForm'])->name('result.calculation.business.form');

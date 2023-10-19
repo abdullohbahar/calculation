@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>Form Wizard</title>
+    <title>KALKULASI HR</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 
