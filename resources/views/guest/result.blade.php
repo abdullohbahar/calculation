@@ -14,9 +14,21 @@
                     <div class="card-header text-center">
                         <h1>HASIL KALKULASI</h1>
                     </div>
-                    <div class="card-body">
-
+                    <div class="card-body text-center">
+                        @if ($type == 'Business')
+                            <h1>
+                                <b>Skor Anda</b> <br>
+                                {{ $skor }}
+                            </h1>
+                        @endif
                         {{ $messages }}
+                    </div>
+                    <div class="card-footer">
+                        @if ($type == 'Business')
+                            <a href="{{ route('business.calculation') }}" class="btn btn-success btn-block">Kembali</a>
+                        @else
+                            <a href="{{ route('hr.calculation') }}" class="btn btn-success btn-block">Kembali</a>
+                        @endif
                     </div>
                 </div>
             </div>

@@ -16,7 +16,7 @@ class GuestController extends Controller
 
     public function resultCalculationHrForm(Request $request)
     {
-        
+
         $respondent = Respondent::create([
             'name' => $request->name,
             'instance' => $request->instance,
@@ -24,7 +24,7 @@ class GuestController extends Controller
             'email' => $request->email,
             'whatsapp_number' => $request->whatsapp_number
         ]);
-        
+
         $arrAnswer = [];
 
         for ($i = 1; $i < 11; $i++) {
@@ -65,6 +65,7 @@ class GuestController extends Controller
 
         $data = [
             'messages' => $messages,
+            'type' => 'HR'
         ];
 
         return view('guest.result', $data);
@@ -77,6 +78,45 @@ class GuestController extends Controller
 
     public function resultCalculationBusinessForm(Request $request)
     {
-        $
+        $respondent = Respondent::create([
+            'name' => $request->name,
+            'instance' => $request->instance,
+            'position' => $request->position,
+            'email' => $request->email,
+            'whatsapp_number' => $request->whatsapp_number
+        ]);
+
+        $arrAnswer = [];
+
+        for ($i = 1; $i < 15; $i++) {
+            $answer = $request->input('question' . $i);
+            array_push($arrAnswer, $answer);
+
+            $answerData = new Answer([
+                'type' => 'Business',
+                'question' => 'question' . $i,
+                'answer' => $answer
+            ]);
+
+            $respondent->answers()->save($answerData);
+        }
+
+        $total = array_sum($arrAnswer);
+
+        if ($total > 30) {
+            $messages = "kemungkinan besar bisnis Anda akan sehat di tahun-tahun mendatang. Anda mungkin ingin mempertimbangkan peluang pertumbuhan strategis atau penyempurnaan lainnya untuk membantu Anda kesuksesan jangka panjang. ";
+        } else if ($total >= 20 && $total <= 30) {
+            $messages = "kemungkinan besar Anda akan mengalami rasa sakit dan nyeri, baik secara internal berkaitan dengan pengiriman dan kinerja, dari arus kas atau keuangan perspektif, atau dari faktor lain. Pertimbangkan untuk mencari nasihat dan bantuan dari seorang penasihat jelajahi dan rekomendasikan beberapa solusi.";
+        } else {
+            $messages = "kemungkinan besar inilah waktunya untuk melakukan ‘operasi’ yang signifikan. Tinjauan kinerja atau opsi serupa lainnya, termasuk restrukturisasi, rencana penyelesaian atau kemungkinan penjualan atau divestasi, dapat dilakukan perlu dipertimbangkan.";
+        }
+
+        $data = [
+            'messages' => $messages,
+            'type' => 'Business',
+            'skor' => $total
+        ];
+
+        return view('guest.result', $data);
     }
 }

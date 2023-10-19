@@ -22,5 +22,5 @@ use Illuminate\Support\Facades\Route;
 Route::get('/kalukasi-hr', [GuestController::class, 'hrCalculation'])->name('hr.calculation');
 Route::post('/hasil-kalkulasi-form-hr', [GuestController::class, 'resultCalculationHrForm'])->name('result.calculation.hr.form');
 
-Route::get('/kalukasi-bisnis', [GuestController::class, 'businessCalculation'])->name('business.calulation');
+Route::get('/kalukasi-bisnis', [GuestController::class, 'businessCalculation'])->name('business.calculation');
 Route::post('/hasil-kalkulasi-form-bisnis', [GuestController::class, 'resultCalculationBusinessForm'])->name('result.calculation.business.form');
