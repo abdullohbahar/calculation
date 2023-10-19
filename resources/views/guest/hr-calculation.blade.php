@@ -16,7 +16,8 @@
                         <h1>KALKULASI HR</h1>
                     </div>
                     <div class="card-body">
-                        <form id="wizardForm">
+                        <form id="wizardForm" action="{{ route('result.calculation.hr.form') }}" method="POST">
+                            @csrf
                             <div class="progress mb-3">
                                 <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 10%"
                                     aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
@@ -60,7 +61,7 @@
                                             <input type="email" name="email" class="form-control" id="email"
                                                 required onkeyup="removeInvalidFeedback(this)">
                                             <div class="invalid-feedback text-capitalize">
-                                                Email harus diisi
+                                                Email harus diisi dan harus email yang valid
                                             </div>
                                         </div>
                                     </div>
@@ -299,7 +300,14 @@
             let radioGroup = {};
 
             for (let i = 0; i < inputs.length; i++) {
-                if (inputs[i].type === "radio") {
+                if (inputs[i].type === "email") {
+                    if (!validateEmail(inputs[i].value)) {
+                        isValid = false;
+                        inputs[i].classList.add("is-invalid");
+                    } else {
+                        inputs[i].classList.remove("is-invalid");
+                    }
+                } else if (inputs[i].type === "radio") {
                     let inputName = inputs[i].getAttribute("name");
                     if (!radioGroup[inputName] && !document.querySelector("input[name='" + inputName + "']:checked")) {
                         isValid = false;
@@ -336,6 +344,12 @@
             if (radioElement.checked) {
                 radioAlert.style.display = "none";
             }
+        }
+
+        function validateEmail(email) {
+            // Gunakan ekspresi reguler untuk memeriksa validitas alamat email
+            const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+            return emailPattern.test(email);
         }
     </script>
 </body>
