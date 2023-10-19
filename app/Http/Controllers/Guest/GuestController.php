@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Guest;
 
 use App\Http\Controllers\Controller;
+use App\Models\Answer;
+use App\Models\Respondent;
 use Illuminate\Http\Request;
 
 class GuestController extends Controller
@@ -14,14 +16,31 @@ class GuestController extends Controller
 
     public function resultCalculationHrForm(Request $request)
     {
-        $arrQuestion = [];
+        
+        $respondent = Respondent::create([
+            'name' => $request->name,
+            'instance' => $request->instance,
+            'position' => $request->position,
+            'email' => $request->email,
+            'whatsapp_number' => $request->whatsapp_number
+        ]);
+        
+        $arrAnswer = [];
 
         for ($i = 1; $i < 11; $i++) {
-            $question = $request->input('question' . $i);
-            array_push($arrQuestion, $question);
+            $answer = $request->input('question' . $i);
+            array_push($arrAnswer, $answer);
+
+            $answerData = new Answer([
+                'type' => 'HR',
+                'question' => 'question' . $i,
+                'answer' => $answer
+            ]);
+
+            $respondent->answers()->save($answerData);
         }
 
-        $countValues = array_count_values($arrQuestion);
+        $countValues = array_count_values($arrAnswer);
 
         if ($countValues['Ya'] <= 3) {
             $messages = "Ambil tindakan
@@ -58,6 +77,6 @@ class GuestController extends Controller
 
     public function resultCalculationBusinessForm(Request $request)
     {
-        dd($request->all());
+        $
     }
 }
