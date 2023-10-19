@@ -70,27 +70,24 @@
                     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
                         data-accordion="false">
                         <li class="nav-item">
-                            <a href="#" class="nav-link {{ $active == 'dashboard' ? 'active' : '' }}">
+                            <a href="{{ route('admin.dashboard') }}"
+                                class="nav-link {{ $active == 'dashboard' ? 'active' : '' }}">
                                 <i class="nav-icon fas fa-tachometer-alt"></i>
                                 <p>Dashboard</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link {{ $active == 'data-fitness' ? 'active' : '' }}">
-                                <i class="nav-icon fas fa-dumbbell"></i>
-                                <p>Data Tempat Fitness</p>
+                            <a href="{{ route('admin.business.form.response') }}"
+                                class="nav-link {{ $active == 'Business' ? 'active' : '' }}">
+                                <i class="nav-icon fas fa-clipboard-list"></i>
+                                <p>Data Jawaban Form Kalkulasi Bisnis</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link {{ $active == 'data-admin' ? 'active' : '' }}">
-                                <i class="nav-icon fas fa-user-cog"></i>
-                                <p>Data Admin</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#" class="nav-link {{ $active == 'profile' ? 'active' : '' }}">
-                                <i class="nav-icon fas fa-address-card"></i>
-                                <p>Profile</p>
+                            <a href="{{ route('admin.hr.form.response') }}"
+                                class="nav-link {{ $active == 'HR' ? 'active' : '' }}">
+                                <i class="nav-icon fas fa-clipboard-list"></i>
+                                <p>Data Jawaban Form Kalkulasi HR</p>
                             </a>
                         </li>
                     </ul>
