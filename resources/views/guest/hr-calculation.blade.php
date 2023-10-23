@@ -12,8 +12,7 @@
             <div class="col-sm-12 col-md-8 mt-3 mb-5">
                 <div class="card">
                     <div class="card-header text-center">
-                        <h1>FORM PERTANYAAN</h1>
-                        <h1>KALKULASI HR</h1>
+                        <h1>HR HEALTH CHECK</h1>
                     </div>
                     <div class="card-body">
                         <form id="wizardForm" action="{{ route('result.calculation.hr.form') }}" method="POST">
@@ -38,6 +37,8 @@
                                         Pilih salah satu opsi.
                                     </div>
                                 </div>
+                            </div>
+                            <div class="tab" style="display: none;">
                                 <h5>2. Penggunaan lembar penilaian wawancara saat seleksi lanjutan</h5>
                                 <div class="form-group">
                                     <input type="radio" name="question2" value="Ya" onclick="hideRadioAlert(this)"
@@ -49,6 +50,8 @@
                                         Pilih salah satu opsi.
                                     </div>
                                 </div>
+                            </div>
+                            <div class="tab" style="display: none;">
                                 <h5>3. Semua karyawan memiliki kontrak kerja</h5>
                                 <div class="form-group">
                                     <input type="radio" name="question3" value="Ya" onclick="hideRadioAlert(this)"
@@ -60,6 +63,8 @@
                                         Pilih salah satu opsi.
                                     </div>
                                 </div>
+                            </div>
+                            <div class="tab" style="display: none;">
                                 <h5>4. Pembaruan kontrak kerja karyawan setiap periode dan/ jenjang
                                     tertentu</h5>
                                 <div class="form-group">
@@ -73,16 +78,19 @@
                                         Pilih salah satu opsi.
                                     </div>
                                 </div>
+                            </div>
+                            <div class="tab" style="display: none;">
                                 <h5>5. Memiliki buku pegangan karyawan yang merinci peraturan, kebijakan
                                     & SOP perusahaan</h5>
                                 <div class="form-group">
                                     <input type="radio" name="question5" value="Ya" onclick="hideRadioAlert(this)"
                                         required id="question5Ya">
                                     <label for="question5Ya">Ya</label> <br>
-                                    <input type="radio" name="question5" value="Tidak" onclick="hideRadioAlert(this)"
-                                        id="question5Tidak">
+                                    <input type="radio" name="question5" value="Tidak"
+                                        onclick="hideRadioAlert(this)" id="question5Tidak">
                                     <label for="question5Tidak">Tidak</label>
-                                    <div id="radioAlert" class="alert alert-danger radio-alert" style="display: none;">
+                                    <div id="radioAlert" class="alert alert-danger radio-alert"
+                                        style="display: none;">
                                         Pilih salah satu opsi.
                                     </div>
                                 </div>
@@ -103,6 +111,8 @@
                                         Pilih salah satu opsi.
                                     </div>
                                 </div>
+                            </div>
+                            <div class="tab" style="display: none;">
                                 <h5>7. Menerapkan prosedur disipliner tertulis (yang mencakup klausul
                                     pemberhentian), pemecatan, banding & pengaduan?</h5>
                                 <div class="form-group">
@@ -117,6 +127,8 @@
                                         Pilih salah satu opsi.
                                     </div>
                                 </div>
+                            </div>
+                            <div class="tab" style="display: none;">
                                 <h5>8. Prosedur di poin sebelumnya telah sesuai dengan kode etik
                                     Disnaker?</h5>
                                 <div class="form-group">
@@ -131,6 +143,8 @@
                                         Pilih salah satu opsi.
                                     </div>
                                 </div>
+                            </div>
+                            <div class="tab" style="display: none;">
                                 <h5>9. Peninjauan aturan kerja, benefit & compensation serta SOP
                                     perusahaan secara rutin sesuai perkembangan bisnis dan peraturan
                                     undang-undang yang berlaku</h5>
@@ -146,6 +160,8 @@
                                         Pilih salah satu opsi.
                                     </div>
                                 </div>
+                            </div>
+                            <div class="tab" style="display: none;">
                                 <h5>10. Memiliki konsultan profesional untuk memandu Anda dalam masalah
                                     atau perselisihan karyawan?</h5>
                                 <div class="form-group">
@@ -168,7 +184,7 @@
                                     <button type="button" class="btn btn-info" id="nextBtn"
                                         onclick="validateForm()">Next</button>
                                     <button type="submit" class="btn btn-success" id="submitBtn"
-                                        style="display: none;">Simpan</button>
+                                        style="display: none;">Lihat Hasil</button>
                                 </div>
                             </div>
                         </form>

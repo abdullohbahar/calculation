@@ -12,22 +12,22 @@
             <div class="col-sm-12 col-md-8 mt-3 mb-5">
                 <div class="card">
                     <div class="card-header text-center">
-                        <h1>HASIL KALKULASI</h1>
+                        <h1>
+                            @if ($type == 'Business')
+                                Hasil Cek Up Bisnis
+                            @else
+                                Hasil Cek Up HR
+                            @endif
+                        </h1>
                     </div>
                     <div class="card-body text-center">
-                        @if ($type == 'Business')
-                            <h1>
-                                <b>Skor Anda</b> <br>
-                                {{ $skor }}
-                            </h1>
-                        @endif
                         {{ $messages }}
                     </div>
                     <div class="card-footer">
                         @if ($type == 'Business')
-                            <a href="{{ route('business.calculation') }}" class="btn btn-success btn-block">Kembali</a>
+                            <a href="https://aptamemayungasta.com/" class="btn btn-success btn-block">Kembali</a>
                         @else
-                            <a href="{{ route('hr.calculation') }}" class="btn btn-success btn-block">Kembali</a>
+                            <a href="https://aptamemayungasta.com/" class="btn btn-success btn-block">Kembali</a>
                         @endif
                     </div>
                 </div>
