@@ -12,8 +12,7 @@
             <div class="col-sm-12 col-md-8 mt-3 mb-5">
                 <div class="card">
                     <div class="card-header text-center">
-                        <h1>FORM PERTANYAAN</h1>
-                        <h1>KALKULASI BISNIS</h1>
+                        <h1>BUSINESS HEALTH CHECK</h1>
                     </div>
                     <div class="card-body">
                         <form id="wizardForm" action="{{ route('result.calculation.business.form') }}" method="POST">
@@ -41,6 +40,9 @@
                                         Pilih salah satu opsi.
                                     </div>
                                 </div>
+
+                            </div>
+                            <div class="tab" style="display: none;">
                                 <h5>2. Telah mendapatkan "nilai" dari investasi pada
                                     SDM. Tanggung jawab & hasil pekerjaan karyawan
                                     sudah sesuai harapan.</h5>
@@ -56,6 +58,8 @@
                                         Pilih salah satu opsi.
                                     </div>
                                 </div>
+                            </div>
+                            <div class="tab" style="display: none;">
                                 <h5>3. Konsisten memenuhi arus
                                     kas keuangan serta komitmen dengan
                                     proyeksi keuangan dan anggaran?</h5>
@@ -71,6 +75,9 @@
                                         Pilih salah satu opsi.
                                     </div>
                                 </div>
+
+                            </div>
+                            <div class="tab" style="display: none;">
                                 <h5>4. Pelanggan merasa mudah dalam mengakses
                                     produk/ jasa kita. Tidak sulit memproses
                                     pembayaran.</h5>
@@ -78,8 +85,8 @@
                                     <input type="radio" name="question4" value="1" onclick="hideRadioAlert(this)"
                                         required id="question41">
                                     <label for="question41">1</label> <br>
-                                    <input type="radio" name="question4" value="2" onclick="hideRadioAlert(this)"
-                                        id="question42">
+                                    <input type="radio" name="question4" value="2"
+                                        onclick="hideRadioAlert(this)" id="question42">
                                     <label for="question42">2</label><br>
                                     <input type="radio" name="question4" value="3"
                                         onclick="hideRadioAlert(this)" id="question43"> <label
@@ -89,6 +96,9 @@
                                         Pilih salah satu opsi.
                                     </div>
                                 </div>
+
+                            </div>
+                            <div class="tab" style="display: none;">
                                 <h5>5. Arus kas perusahaan kuat (3)/ lemah (1)?
                                     Keuangan aman dalam jangka lama (3) atau hanya
                                     mampu membiayai pengeluaran rutin harian &
@@ -128,6 +138,9 @@
                                         Pilih salah satu opsi.
                                     </div>
                                 </div>
+
+                            </div>
+                            <div class="tab" style="display: none;">
                                 <h5>7. Stok bahan baku secara kuantitas dan kualitas
                                     sampai masa depan sudah terjamin aman.</h5>
                                 <div class="form-group">
@@ -145,6 +158,9 @@
                                         Pilih salah satu opsi.
                                     </div>
                                 </div>
+
+                            </div>
+                            <div class="tab" style="display: none;">
                                 <h5>8. Memiliki sistem order dan faktur yang jelas.</h5>
                                 <div class="form-group">
                                     <input type="radio" name="question8" value="1"
@@ -161,6 +177,9 @@
                                         Pilih salah satu opsi.
                                     </div>
                                 </div>
+
+                            </div>
+                            <div class="tab" style="display: none;">
                                 <h5>9. Secara aktif dan dinamis mengukur kualitas
                                     produk? Evaluasi hanya saat terjadi komplain
                                     pelanggan?</h5>
@@ -179,6 +198,9 @@
                                         Pilih salah satu opsi.
                                     </div>
                                 </div>
+
+                            </div>
+                            <div class="tab" style="display: none;">
                                 <h5>10. Rutin melakukan pengukuran kepuasan
                                     pelanggan.</h5>
                                 <div class="form-group">
@@ -216,6 +238,9 @@
                                         Pilih salah satu opsi.
                                     </div>
                                 </div>
+
+                            </div>
+                            <div class="tab" style="display: none;">
                                 <h5>12. Menjalankan proses aktif dalam bisnis untuk
                                     mengidentifikasi dan mengatasi risiko-risiko utama
                                     – pembayaran, pasar,
@@ -237,6 +262,9 @@
                                         Pilih salah satu opsi.
                                     </div>
                                 </div>
+
+                            </div>
+                            <div class="tab" style="display: none;">
                                 <h5>13. Budaya masyarakat kondusif untuk hal yang positif,
                                     terbuka
                                     dan lingkungan tim interaktif yang mendukung
@@ -256,6 +284,9 @@
                                         Pilih salah satu opsi.
                                     </div>
                                 </div>
+
+                            </div>
+                            <div class="tab" style="display: none;">
                                 <h5>14.Gaji anda sebagai tim manajemen dan/ pemilik
                                     bisnis sudah cukup?</h5>
                                 <div class="form-group">
@@ -281,7 +312,7 @@
                                     <button type="button" class="btn btn-info" id="nextBtn"
                                         onclick="validateForm()">Next</button>
                                     <button type="submit" class="btn btn-success" id="submitBtn"
-                                        style="display: none;">Simpan</button>
+                                        style="display: none;">Lihat Hasil</button>
                                 </div>
                             </div>
                         </form>
